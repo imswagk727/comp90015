@@ -10,10 +10,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Shuangkun Fan (1131667)
+ */
 public class ServerUI extends Thread {
 
     private JFrame frame;
     static JLabel lblConnectionNum;
+
     /**
      * Launch the application.
      */
