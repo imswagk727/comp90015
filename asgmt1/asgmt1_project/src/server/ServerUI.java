@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ServerUI extends Thread {
 
@@ -52,12 +54,13 @@ public class ServerUI extends Thread {
         lblConnectionNum.setBounds(185, 90, 61, 16);
         frame.getContentPane().add(lblConnectionNum);
 
-        JButton btnNewButton = new JButton("Close Server");
-        btnNewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-        btnNewButton.setBounds(124, 194, 117, 29);
-        frame.getContentPane().add(btnNewButton);
+//        JButton btnCloserServer = new JButton("Close Server");
+//        btnCloserServer.addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//            }
+//        });
+//        btnCloserServer.setBounds(124, 194, 117, 29);
+//        frame.getContentPane().add(btnCloserServer);
     }
 }
