@@ -21,9 +21,11 @@ public class DictionaryClient {
         // new thread for ClientUI
         ClientUI clientUI = new ClientUI();
         clientUI.start();
+//        int port = Integer.parseInt(args[1]); // for assignment
 
         try {
-            client = new Socket("localhost", 4444);
+            client = new Socket("localhost", 4444); // for testing
+//            client = new Socket(args[0], port); // for assignment
         } catch (ConnectException ce) {
             JOptionPane.showMessageDialog(null, "Wrong port number or server connection error");
         } catch (UnknownHostException e) {

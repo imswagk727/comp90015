@@ -23,15 +23,21 @@ public class DictionaryServer {
     private static final ConcurrentHashMap<String, String> dictionary = new ConcurrentHashMap<String, String>();
     static List<Socket> connectionList = new ArrayList<>();
     static int i = 0;
+    static int port;
     public static void main(String[] args) {
         ServerSocket server = null;
         Socket request = null;
 
-//        String port = args[0];
-//        fileName = args[1];
+//        int portNum = Integer.parseInt(args[0]); // for assignment
+//        String port = args[0]; // for assignment
+//        fileName = args[1]; // for assignment
         try {
-            server = new ServerSocket(4444);
-            fileName = "dictionary.txt";
+            server = new ServerSocket(4444); // for testing
+            fileName = "dictionary.txt"; // for testing
+
+//            server = new ServerSocket(portNum); // for assignment
+//            fileName = args[1];  // for assignment
+
             i = 0;
         } catch (BindException e) {
             System.out.println("Port number address already in use, Pick another one");
@@ -41,6 +47,8 @@ public class DictionaryServer {
 
         ServerUI sui = new ServerUI();
         sui.start();
+
+        port = server.getLocalPort();
         //save dictionary
         try {
             readDictionary();
