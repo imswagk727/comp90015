@@ -9,19 +9,24 @@ import java.io.InputStreamReader;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Shuangkun Fan (1131667)
+ */
 public class DictionaryServer {
     static String fileName;
-
     //ConcurrentHashMap for concurrency control
     private static final ConcurrentHashMap<String, String> dictionary = new ConcurrentHashMap<String, String>();
-
+    static List<Socket> connectionList = new ArrayList<>();
+    static int i = 0;
     public static void main(String[] args) {
         ServerSocket server = null;
         Socket request = null;
-        int i = 0;
+
 //        String port = args[0];
 //        fileName = args[1];
         try {
@@ -34,7 +39,8 @@ public class DictionaryServer {
             System.out.println("IOException error");
         }
 
-
+        ServerUI sui = new ServerUI();
+        sui.start();
         //save dictionary
         try {
             readDictionary();
@@ -50,8 +56,10 @@ public class DictionaryServer {
             try {
                 System.out.println("Server listening on port" + " " + "for a connection");
                 request = server.accept();
+                connectionList.add(request);
                 i++;
                 System.out.println("Client conection number " + i + " accepted:");
+                ServerUI.lblConnectionNum.setText(String.valueOf(i));
             } catch (Exception e) {
                 e.printStackTrace();
                 return;

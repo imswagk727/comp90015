@@ -7,6 +7,9 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
+/**
+ * Shuangkun Fan (1131667)
+ */
 public class DictionaryClient {
     static Socket client = null;
     static BufferedReader reader;

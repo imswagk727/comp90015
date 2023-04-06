@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
+/**
+ * Shuangkun Fan (1131667)
+ */
 public class ClientUI extends Thread {
 
 

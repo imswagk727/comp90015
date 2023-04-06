@@ -5,6 +5,9 @@ import java.io.*;
 import java.net.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Shuangkun Fan (1131667)
+ */
 public class ServerThreadConnection extends Thread {
 
     Socket socket = null;
@@ -30,6 +33,9 @@ public class ServerThreadConnection extends Thread {
             try {
                 request = input.readLine();
                 if (request == null) {
+                    DictionaryServer.i = DictionaryServer.i - 1 ;
+                    System.out.println("Client conection number " + DictionaryServer.i + " accepted:");
+                    ServerUI.lblConnectionNum.setText(String.valueOf(DictionaryServer.i));
                     socket.close();
                     return;
                 } else {
