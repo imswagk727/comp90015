@@ -12,4 +12,5 @@ eg: ```java -jar DictionaryServer.jar 8888 dictionary.txt```
 ```java –jar DictionaryClient.jar <server-address> <server-port>```  
 eg: ```java -jar DictionaryClient.jar localhost 8888```
 
-
+![](./asgmt1/demo_picture/client.png)
+![](./asgmt1/demo_picture/server.png)
