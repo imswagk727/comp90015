@@ -12,8 +12,5 @@ eg: ```java -jar DictionaryServer.jar 8888 dictionary.txt```
 ```java –jar DictionaryClient.jar <server-address> <server-port>```  
 eg: ```java -jar DictionaryClient.jar localhost 8888```
 
-![width=150](./asgmt1/demo_picture/client.png)
-![width=150](./asgmt1/demo_picture/server.png)
-
-<img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/client.png" style="width: 50%">
-
+<img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/server.png" style="width: 60%">
+<img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/client.png" style="width: 70%">
