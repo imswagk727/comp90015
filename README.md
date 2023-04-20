@@ -8,6 +8,6 @@ Course resources COMP90015 - Distributed System - 2023 Semester 1
 2. Run server  
 ```java -jar DictionaryServer.jar 8888 dictionary.txt```
 3. Run client  
-```java -jar DictionaryClient.jar localhost 9999```
+```java -jar DictionaryClient.jar localhost 8888```
 
 
