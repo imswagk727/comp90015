@@ -6,7 +6,7 @@ Course resources COMP90015 - Distributed System - 2023 Semester 1
 1. Change working directory to file path  
 ```cd location_you_downloaded_file/comp90015/asgmt1/submit```
 2. Run server  
-```java –jar DictionaryServer.jar <port> <dictionary-file>```  
+```java –jar DictionaryServer.jar <port> <file_name.txt>```  
 eg: ```java -jar DictionaryServer.jar 8888 dictionary.txt```
 3. Run client  
 ```java –jar DictionaryClient.jar <server-address> <server-port>```  
