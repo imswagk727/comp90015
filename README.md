@@ -21,6 +21,10 @@ java –jar DictionaryClient.jar <server-address> <server-port>
 # example :
 java -jar DictionaryClient.jar localhost 8888
 ```
+Server             |  Client
+:-------------------------:|:-------------------------:
+<img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/server.png" style="width: 100%">  |  <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/client.png" style="width: 100%">
+
 
 <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/server.png" style="width: 60%">
 <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/client.png" style="width: 70%">
