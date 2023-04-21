@@ -5,7 +5,7 @@ Course resources COMP90015 - Distributed System - 2023 Semester 1
 
 1. Change working directory to file path  
 ```bash
-cd location_you_downloaded_file/comp90015/asgmt1/submit
+cd *...location_you_downloaded_file*/comp90015/asgmt1/submit
 ```
 2. Run server  
 ```bash
@@ -21,10 +21,6 @@ java –jar DictionaryClient.jar <server-address> <server-port>
 # example :
 java -jar DictionaryClient.jar localhost 8888
 ```
-
-
-```java –jar DictionaryClient.jar <server-address> <server-port>```  
-eg: ```java -jar DictionaryClient.jar localhost 8888```
 
 <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/server.png" style="width: 60%">
 <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/client.png" style="width: 70%">
