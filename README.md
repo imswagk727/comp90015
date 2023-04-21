@@ -5,7 +5,7 @@ Course resources COMP90015 - Distributed System - 2023 Semester 1
 
 1. Change working directory to file path  
 ```bash
-cd *...location_you_downloaded_file*/comp90015/asgmt1/submit
+cd replace_to_your_folder_path/comp90015/asgmt1/submit
 ```
 2. Run server  
 ```bash
