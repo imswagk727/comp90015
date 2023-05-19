@@ -19,7 +19,7 @@ refer to this link: [COMP90015](http://clouds.cis.unimelb.edu.au/652/LectureSlid
 
 
 
-#### How to run assignment 1 - multi-threaded-Dictionary-server
+### How to run assignment 1 - multi-threaded-Dictionary-server
 
 1. Change working directory to file path  
 ```bash
