@@ -1,5 +1,5 @@
-# COMP90015 Distributed system
-Course resources COMP90015 - Distributed System - 2023 Semester 1
+## COMP90015 Distributed system
+### Course resources COMP90015 - Distributed System - 2023 Semester 1
 
 |  Part |           Lecture           |      Tutorial     |
 |-------|-----------------------------|-------------------|
