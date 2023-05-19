@@ -3,17 +3,17 @@
 
 |  Part |           Lecture           |      Tutorial     |
 |-------|-----------------------------|-------------------|
-| Part 1| L0 &1  Admin & intro        | w2  tute 1        |
-|       | L2 Sockets                  | w3  tute2         |
-|       | L3 Threads                  | w4  tute3         |
-| Part 2| L4 DS Models                | w5  tute4         |
-|       | L5 OS DS                    | w6  tute5         |
-|       |                             | w7  tute6         |
-|       | L6 RMI Programming          | w8  tute7         |
-| Part 3| L7 Security                 | w9  tute8         |
-|       |                             | w10 tute9         |
-|       | L8 Distributed File Systems | w11 tute10        |
-|       | L10 Naming service          | w12 tute11        |
+| Part 1| L0 &1  Admin & intro        | week02  tute1     |
+|       | L2 Sockets                  | week03  tute2     |
+|       | L3 Threads                  | week04  tute3     |
+| Part 2| L4 DS Models                | week05  tute4     |
+|       | L5 OS DS                    | week06  tute5     |
+|       |                             | week07  tute6     |
+|       | L6 RMI Programming          | week08  tute7     |
+| Part 3| L7 Security                 | week09  tute8     |
+|       |                             | week10  tute9     |
+|       | L8 Distributed File Systems | week11  tute10    |
+|       | L10 Naming service          | week12  tute11    |
 
 refer to this link: [COMP90015](http://clouds.cis.unimelb.edu.au/652/LectureSlides.html)
 
