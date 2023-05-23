@@ -39,7 +39,7 @@ public interface CanvasClientInterface extends Remote {
     public void refreshCanvas() throws RemoteException;
 
     //send the whiteboard as image to server
-    public byte[] sendImage() throws RemoteException;
+    public byte[] sendImage() throws RemoteException, IOException;
 
     // draw on opened image
     public void drawOpenedImage(byte[] rawImage) throws IOException;

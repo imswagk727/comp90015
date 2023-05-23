@@ -12,7 +12,7 @@ import java.util.Set;
 // servant class
 public class CanvasServer extends UnicastRemoteObject implements CanvasServerInterface {
 
-//    private static final long serialVersionUID  = 1L;
+    private static final long serialVersionUID  = 1L;
     private final ClientManager clientManager;
 
     // CanvasServer contains a client manager that manages the client
@@ -52,7 +52,7 @@ public class CanvasServer extends UnicastRemoteObject implements CanvasServerInt
         }
         // manager marks
         if (client.getManager()) {
-            client.setName(client.getName() + "(Manager)");
+            client.setName("*" + client.getName());
         }
 
         // add client to client manager
@@ -66,7 +66,7 @@ public class CanvasServer extends UnicastRemoteObject implements CanvasServerInt
 
     // broadcast
     @Override
-    public void broadCastingCanvas(CanvasMsgInterface message) throws RemoteException {
+    public void broadCastCanvas(CanvasMsgInterface message) throws RemoteException {
         for (CanvasClientInterface c : this.clientManager) {
             c.syncCanvas(message);
         }
@@ -85,7 +85,7 @@ public class CanvasServer extends UnicastRemoteObject implements CanvasServerInt
         return this.clientManager.getClientList();
     }
 
-    @Override
+
     // return manager's canvas
     public byte[] sendImage() throws IOException {
         byte[] currentImage = null;

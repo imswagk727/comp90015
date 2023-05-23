@@ -20,7 +20,7 @@ public interface CanvasServerInterface extends Remote {
 
 
     // boardcasting drawing
-    public void broadCastingCanvas(CanvasMsgInterface message) throws  RemoteException;
+    public void broadCastCanvas(CanvasMsgInterface message) throws  RemoteException;
 
     // all clients clear canvas
     public void refreshCanvas() throws RemoteException;
