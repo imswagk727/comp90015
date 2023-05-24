@@ -28,7 +28,7 @@ public class ClientManager implements Iterable<CanvasClientInterface>{
 
     //check if clientList is empty (no client)
     public boolean isEmpty() {
-        return false;
+        return this.clientList.size() == 0;
     }
 
     // remove a client from ClientList

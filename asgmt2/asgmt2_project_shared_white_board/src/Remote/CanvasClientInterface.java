@@ -33,7 +33,7 @@ public interface CanvasClientInterface extends Remote {
     public boolean getManager() throws RemoteException;
 
     // set manager
-    public void setManager() throws RemoteException;
+    public void assignManager() throws RemoteException;
 
     // clear whiteboard
     public void refreshCanvas() throws RemoteException;

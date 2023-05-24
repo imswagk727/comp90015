@@ -807,7 +807,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
     }
 
     @Override
-    public void setManager() throws RemoteException {
+    public void assignManager() throws RemoteException {
         this.isManager = true;
     }
 

@@ -187,27 +187,27 @@ public class Canvas extends JComponent {
     //initialize the white board to syc with the manager
     protected void paintComponent(Graphics g) {
         if (image == null) {
-//            if (isManager) {
-//                image = new BufferedImage(700, 350, BufferedImage.TYPE_INT_RGB);
-//                graphics = (Graphics2D) image.getGraphics();
-//                graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-//                reset();
-//            } else {
-//                try {
-//                    byte[] rawImage = server.sendImage();
-//                    image = ImageIO.read(new ByteArrayInputStream(rawImage));
-//                    graphics = (Graphics2D) image.getGraphics();
-//                    graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-//                    graphics.setPaint(color);
-//                } catch (IOException e) {
-//                    System.out.println("Fail receiving image");
-//
-//                }
-//            }
-            image = new BufferedImage(700, 350, BufferedImage.TYPE_INT_RGB);
-            graphics = (Graphics2D) image.getGraphics();
-            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            reset();
+            if (isManager) {
+                image = new BufferedImage(700, 350, BufferedImage.TYPE_INT_RGB);
+                graphics = (Graphics2D) image.getGraphics();
+                graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                reset();
+            } else {
+                try {
+                    byte[] rawImage = server.sendImage();
+                    image = ImageIO.read(new ByteArrayInputStream(rawImage));
+                    graphics = (Graphics2D) image.getGraphics();
+                    graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                    graphics.setPaint(color);
+                } catch (IOException e) {
+                    System.out.println("Fail receiving image");
+
+                }
+            }
+//            image = new BufferedImage(700, 350, BufferedImage.TYPE_INT_RGB);
+//            graphics = (Graphics2D) image.getGraphics();
+//            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+//            reset();
 
         }
         g.drawImage(image, 0, 0, null);

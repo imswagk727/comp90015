@@ -13,7 +13,7 @@ import java.util.Set;
 public class CanvasServer extends UnicastRemoteObject implements CanvasServerInterface {
 
     private static final long serialVersionUID  = 1L;
-    private final ClientManager clientManager;
+    private ClientManager clientManager;
 
     // CanvasServer contains a client manager that manages the client
     // The server receives client registrations and serve as the communication channel between clients
@@ -26,7 +26,7 @@ public class CanvasServer extends UnicastRemoteObject implements CanvasServerInt
     public void register(CanvasClientInterface client) throws RemoteException {
         // first user -> manager
         if (this.clientManager.isEmpty()) {
-            client.setManager();
+            client.assignManager();
         }
 
         boolean permission = true;
