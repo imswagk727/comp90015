@@ -889,7 +889,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
 //            }
 //            String serverAddress = "//" + args[0] + ":" + args[1] + "/WhiteBoardServer";
 
-          //testing:
+            //testing:
             String hostName = "localhost";
             String portNumber = "1234";
             String serverAddress = "//" + hostName + ":" + portNumber + "/WhiteBoardServer";
@@ -909,7 +909,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                     validName = true;
                 }
                 for (CanvasClientInterface c : server.getClientList()) {
-                    if (client_name.equals(c.getName()) || c.getName().equals("*" + client_name)) {
+                    if (client_name.equals(c.getName()) || c.getName().equals(client_name + " (Manager)")) {
                         validName = false;
                         JOptionPane.showMessageDialog(null, "The name is taken, think a different name!");
                     }

@@ -4,6 +4,7 @@ import Remote.CanvasClientInterface;
 import Remote.CanvasMsgInterface;
 import Remote.CanvasServerInterface;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -52,7 +53,7 @@ public class CanvasServer extends UnicastRemoteObject implements CanvasServerInt
         }
         // manager marks
         if (client.getManager()) {
-            client.setName("*" + client.getName());
+            client.setName(client.getName() + " (Manager)");
         }
 
         // add client to client manager
@@ -112,6 +113,7 @@ public class CanvasServer extends UnicastRemoteObject implements CanvasServerInt
             if (c.getName().equals(name)) {
                 this.clientManager.deleteClient(c);
                 System.out.println(name + "has left");
+                JOptionPane.showMessageDialog(null,"Good bye! " + name);
             }
         }
 
