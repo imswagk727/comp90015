@@ -874,22 +874,23 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
     }
 
     public static void main(String[] args) throws RemoteException, MalformedURLException, NotBoundException, ServerNotActiveException {
-        // submission:
-//        if (args.length != 2) {
-//            throw new IllegalArgumentException("Need exactly two arguments.");
-//        }
+//         //submission:
+        if (args.length != 2) {
+            throw new IllegalArgumentException("Need exactly two arguments.");
+        }
 
         try {
-//            if (!(args[0].equals("localhost") || args[0].equals("127.0.0.1"))) {
-//                System.err.println("Please enter localhost or 127.0.0.1");
-//                return;
-//            }
-//            String serverAddress = "//" + args[0] + ":" + args[1] + "/WhiteBoardServer";
+            //submission
+            if (!(args[0].equals("localhost") || args[0].equals("127.0.0.1"))) {
+                System.err.println("Please enter localhost or 127.0.0.1");
+                return;
+            }
+            String serverAddress = "//" + args[0] + ":" + args[1] + "/WhiteBoardServer";
 
-            //testing:
-            String hostName = "localhost";
-            String portNumber = "1234";
-            String serverAddress = "//" + hostName + ":" + portNumber + "/WhiteBoardServer";
+//            //testing:
+//            String hostName = "localhost";
+//            String portNumber = "1234";
+//            String serverAddress = "//" + hostName + ":" + portNumber + "/WhiteBoardServer";
 
 
             //Look up the Canvas Server from the RMI name registry
