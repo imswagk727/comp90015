@@ -35,7 +35,7 @@ import java.rmi.server.UnicastRemoteObject;
 public class CanvasClient extends UnicastRemoteObject implements CanvasClientInterface, Remote {
 
     //    private static final long serialVersionUID = 1L;
-    static CanvasServerInterface server;
+    static CanvasServerInterface server; //remote object
     private boolean isManager; //true if is manager
     private boolean havePermission; //permission granted by manager
     private JFrame frame;
@@ -134,6 +134,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                 canvasUI.aoi();
             } else if (e.getSource() == skyBtn) {
                 canvasUI.sky();
+                // drawing mode
             } else if (e.getSource() == drawBtn) {
                 canvasUI.draw();
                 for (JButton button : btnList) {
@@ -352,14 +353,13 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         LineBorder border = new LineBorder(Color.black, 2);
 
         Icon icon = new ImageIcon(this.getClass().getResource("/icon/pencil.png"));
-
-
         drawBtn = new JButton(icon);
         drawBtn.setToolTipText("Pencil draw");
         drawBtn.setBorder(border);
         drawBtn.addActionListener(actionListener);
 
         border = new LineBorder(new Color(238, 238, 238), 2);
+
         icon = new ImageIcon(this.getClass().getResource("/icon/line.png"));
         lineBtn = new JButton(icon);
         lineBtn.setToolTipText("Draw line");
@@ -740,7 +740,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
 
         //start from the start point of client x
         Point startPt = (Point) startPoints.get(msg.getName());
-
+//        Color currentColor = canvasUI.getCurrColor();
         //set canvas stroke color
         canvasUI.getGraphic().setPaint(msg.getColor());
 
@@ -752,6 +752,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
             startPoints.put(msg.getName(), msg.getPoint());
             canvasUI.getGraphic().draw(shape);
             canvasUI.repaint();
+//            canvasUI.getGraphic().setPaint(currentColor);
             return;
         }
 
@@ -839,7 +840,6 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         } else {
             return false;
         }
-
     }
 
     public void setPermission(boolean flag) {

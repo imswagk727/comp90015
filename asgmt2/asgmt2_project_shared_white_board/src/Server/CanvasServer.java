@@ -41,6 +41,11 @@ public class CanvasServer extends UnicastRemoteObject implements CanvasServerInt
                     return;
                 }
             }
+//            else {
+//                for (CanvasClientInterface c1 : this.clientManager) {
+//                    c1.updateUserList(getClientList());
+//                }
+//            }
         }
         // set the client's permission
         if (!permission) {
