@@ -103,9 +103,9 @@ public class Canvas extends JComponent {
                         drawPreviousCanvas();
                         shape = makeCircle(shape, startPt, endPt);
 
-                    } else if (mode.equals("triangle")) {
+                    } else if (mode.equals("oval")) {
                         drawPreviousCanvas();
-                        shape = makeTriangle(shape, startPt, endPt);
+                        shape = makeOval(shape, startPt, endPt);
                     } else if (mode.equals("text")) {
                         drawPreviousCanvas();
                         graphics.setFont(new Font("TimesRoman", Font.PLAIN, 20));
@@ -139,8 +139,8 @@ public class Canvas extends JComponent {
                         shape = makeRectangle(shape, startPt, endPt);
                     } else if (mode.equals("circle")) {
                         shape = makeCircle(shape, startPt, endPt);
-                    } else if (mode.equals("triangle")) {
-                        shape = makeTriangle(shape, startPt, endPt);
+                    } else if (mode.equals("oval")) {
+                        shape = makeOval(shape, startPt, endPt);
                     } else if (mode.equals("text")) {
                         text = JOptionPane.showInputDialog("Please enter your text.");
                         if (text == null)
@@ -370,10 +370,6 @@ public class Canvas extends JComponent {
         mode = "oval";
     }
 
-    public void triangle() {
-        mode = "triangle";
-    }
-
     public void text() {
         mode = "text";
     }
@@ -426,22 +422,6 @@ public class Canvas extends JComponent {
         return shape;
     }
 
-    public Shape makeTriangle(Shape shape, Point start, Point end) {
-        //store the start and end x and y
-        int minx = Math.min(start.x, end.x);
-        int miny = Math.min(start.y, end.y);
-        int maxx = Math.max(start.x, end.x);
-        int maxy = Math.max(start.y, end.y);
-        int[] x = {minx, (minx + maxx) / 2, maxx};
-        int[] y = {maxy, miny, maxy};
-        shape = new Polygon(x, y, 3);
-        //flipes depending on the drag location
-        if (end.y < start.y) {
-            int[] dy = {miny, maxy, miny};
-            shape = new Polygon(x, dy, 3);
-        }
-        return shape;
-    }
 }
 
 

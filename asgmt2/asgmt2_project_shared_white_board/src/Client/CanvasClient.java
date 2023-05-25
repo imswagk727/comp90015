@@ -43,7 +43,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
     private DefaultListModel<String> chatList;
     private JButton clearBtn, saveBtn, saveAsBtn, openBtn, blackBtn, blueBtn, greenBtn, redBtn, orangeBtn, yellowBtn, cyanBtn;
     private JButton brownBtn, pinkBtn, greyBtn, purpleBtn, limeBtn, darkgreyBtn, magentaBtn, aoiBtn, skyBtn;
-    private JButton drawBtn, lineBtn, rectBtn, circleBtn, triangleBtn, textBtn, eraserBtn;
+    private JButton drawBtn, lineBtn, rectBtn, circleBtn, ovalBtn, textBtn, eraserBtn;
     private JScrollPane msgArea;
     private JTextArea tellColor, displayColor;
     private JList<String> chat;
@@ -171,10 +171,10 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                         button.setBorder(empty);
                     }
                 }
-            } else if (e.getSource() == triangleBtn) {
-                canvasUI.triangle();
+            } else if (e.getSource() == ovalBtn) {
+                canvasUI.oval();
                 for (JButton button : btnList) {
-                    if (button == triangleBtn) {
+                    if (button == ovalBtn) {
                         button.setBorder(box);
                     } else {
                         button.setBorder(empty);
@@ -378,11 +378,11 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         circleBtn.setBorder(border);
         circleBtn.addActionListener(actionListener);
 
-        icon = new ImageIcon(this.getClass().getResource("/icon/triangle.png"));
-        triangleBtn = new JButton(icon);
-        rectBtn.setToolTipText("Draw triangle");
-        triangleBtn.setBorder(border);
-        triangleBtn.addActionListener(actionListener);
+        icon = new ImageIcon(this.getClass().getResource("/icon/oval.png"));
+        ovalBtn = new JButton(icon);
+        rectBtn.setToolTipText("Draw oval");
+        ovalBtn.setBorder(border);
+        ovalBtn.addActionListener(actionListener);
 
         icon = new ImageIcon(this.getClass().getResource("/icon/text.png"));
         textBtn = new JButton(icon);
@@ -400,7 +400,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         btnList.add(lineBtn);
         btnList.add(rectBtn);
         btnList.add(circleBtn);
-        btnList.add(triangleBtn);
+        btnList.add(ovalBtn);
         btnList.add(textBtn);
         btnList.add(eraserBtn);
 
@@ -509,7 +509,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                         .addComponent(lineBtn)
                         .addComponent(rectBtn)
                         .addComponent(circleBtn)
-                        .addComponent(triangleBtn)
+                        .addComponent(ovalBtn)
                         .addComponent(textBtn)
                         .addComponent(eraserBtn)
                 )
@@ -564,7 +564,7 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                                 .addComponent(lineBtn)
                                 .addComponent(rectBtn)
                                 .addComponent(circleBtn)
-                                .addComponent(triangleBtn)
+                                .addComponent(ovalBtn)
                                 .addComponent(textBtn)
                                 .addComponent(eraserBtn)
                         )
@@ -706,21 +706,13 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         return shape;
     }
 
-    //Draw Triangle
-    public Shape makeTriangle(Shape shape, Point start, Point end) {
-        //store the start and end x and y
-        int minx = Math.min(start.x, end.x);
-        int miny = Math.min(start.y, end.y);
-        int maxx = Math.max(start.x, end.x);
-        int maxy = Math.max(start.y, end.y);
-        int[] x = {minx, (minx + maxx) / 2, maxx};
-        int[] y = {maxy, miny, maxy};
-        shape = new Polygon(x, y, 3);
-        //flipes depending on the drag location
-        if (end.y < start.y) {
-            int[] dy = {miny, maxy, miny};
-            shape = new Polygon(x, dy, 3);
-        }
+
+    public Shape makeOval(Shape shape, Point start, Point end) {
+        int x = Math.min(start.x, end.x);
+        int y = Math.min(start.y, end.y);
+        int width = Math.abs(start.x - end.x);
+        int height = Math.abs(start.y - end.y);
+        shape = new Ellipse2D.Double(x, y, width, height);
         return shape;
     }
 
@@ -766,13 +758,13 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                 shape = makeRectangle(shape, startPt, msg.getPoint());
             } else if (msg.getMode().equals("circle")) {
                 shape = makeCircle(shape, startPt, msg.getPoint());
-            } else if (msg.getMode().equals("triangle")) {
-                shape = makeTriangle(shape, startPt, msg.getPoint());
+            } else if (msg.getMode().equals("oval")) {
+                shape = makeOval(shape, startPt, msg.getPoint());
             } else if (msg.getMode().equals("text")) {
                 canvasUI.getGraphic().setFont(new Font("TimesRoman", Font.PLAIN, 16));
                 canvasUI.getGraphic().drawString(msg.getText(), msg.getPoint().x, msg.getPoint().y);
             }
-            //draw shape if in shape mode: triangle, circle, rectangle
+            //draw shape if in shape mode: oval, circle, rectangle
             if (!msg.getMode().equals("text")) {
                 try {
                     canvasUI.getGraphic().draw(shape);
