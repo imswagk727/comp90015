@@ -848,6 +848,11 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         if (!this.havePermission) {
             Thread t = new Thread(new Runnable() {
                 public void run() {
+                    try {
+                        server.removeMe(clientName);
+                    } catch (RemoteException e) {
+                        throw new RuntimeException(e);
+                    }
                     JOptionPane.showMessageDialog(null, "Sorry, You were not grant access to the shared whiteboard." + "\n",
                             "Warning", JOptionPane.WARNING_MESSAGE);
                     System.exit(0);
