@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
@@ -62,7 +63,7 @@ public class Canvas extends JComponent {
         });
 
         //listen to the action on the canvas, draw the shape on local client, then send the shape to server
-        addMouseListener(new MouseAdapter() {
+        addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
                 endPt = e.getPoint();
