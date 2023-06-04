@@ -260,49 +260,49 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         blackBtn.addActionListener(actionListener);
 
         blueBtn = new JButton();
-        blueBtn.setBackground(Color.blue);
+        blueBtn.setBackground(new Color(77, 77, 255));
         blueBtn.setBorderPainted(false);
         blueBtn.setOpaque(true);
         blueBtn.addActionListener(actionListener);
 
         greenBtn = new JButton();
-        greenBtn.setBackground(Color.green);
+        greenBtn.setBackground(new Color(110, 255, 77));
         greenBtn.setBorderPainted(false);
         greenBtn.setOpaque(true);
         greenBtn.addActionListener(actionListener);
 
         redBtn = new JButton();
-        redBtn.setBackground(Color.red);
+        redBtn.setBackground(new Color(255, 77, 77));
         redBtn.setBorderPainted(false);
         redBtn.setOpaque(true);
         redBtn.addActionListener(actionListener);
 
         orangeBtn = new JButton();
-        orangeBtn.setBackground(Color.orange);
+        orangeBtn.setBackground(new Color(255, 136, 77));
         orangeBtn.setBorderPainted(false);
         orangeBtn.setOpaque(true);
         orangeBtn.addActionListener(actionListener);
 
         yellowBtn = new JButton();
-        yellowBtn.setBackground(Color.yellow);
+        yellowBtn.setBackground(new Color(255, 255, 77));
         yellowBtn.setBorderPainted(false);
         yellowBtn.setOpaque(true);
         yellowBtn.addActionListener(actionListener);
 
         cyanBtn = new JButton();
-        cyanBtn.setBackground(Color.cyan);
+        cyanBtn.setBackground(new Color(77, 255, 213));
         cyanBtn.setBorderPainted(false);
         cyanBtn.setOpaque(true);
         cyanBtn.addActionListener(actionListener);
 
         brownBtn = new JButton();
-        brownBtn.setBackground(new Color(153, 76, 0));
+        brownBtn.setBackground(new Color(255, 77, 101));
         brownBtn.setBorderPainted(false);
         brownBtn.setOpaque(true);
         brownBtn.addActionListener(actionListener);
 
         pinkBtn = new JButton();
-        pinkBtn.setBackground(new Color(255, 153, 204));
+        pinkBtn.setBackground(new Color(255, 77, 153));
         pinkBtn.setBorderPainted(false);
         pinkBtn.setOpaque(true);
         pinkBtn.addActionListener(actionListener);
@@ -314,13 +314,13 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         greyBtn.addActionListener(actionListener);
 
         purpleBtn = new JButton();
-        purpleBtn.setBackground(new Color(102, 0, 204));
+        purpleBtn.setBackground(new Color(166, 77, 255));
         purpleBtn.setBorderPainted(false);
         purpleBtn.setOpaque(true);
         purpleBtn.addActionListener(actionListener);
 
         limeBtn = new JButton();
-        limeBtn.setBackground(new Color(102, 102, 0));
+        limeBtn.setBackground(new Color(213, 255, 77));
         limeBtn.setBorderPainted(false);
         limeBtn.setOpaque(true);
         limeBtn.addActionListener(actionListener);
@@ -332,13 +332,13 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
         darkgreyBtn.addActionListener(actionListener);
 
         magentaBtn = new JButton();
-        magentaBtn.setBackground(Color.magenta);
+        magentaBtn.setBackground(new Color(255, 128, 255));
         magentaBtn.setBorderPainted(false);
         magentaBtn.setOpaque(true);
         magentaBtn.addActionListener(actionListener);
 
         aoiBtn = new JButton();
-        aoiBtn.setBackground(new Color(0, 102, 102));
+        aoiBtn.setBackground(new Color(77, 255, 151));
         aoiBtn.setBorderPainted(false);
         aoiBtn.setOpaque(true);
         aoiBtn.addActionListener(actionListener);
@@ -523,26 +523,27 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                         )
                         .addGroup(layout.createSequentialGroup()
                                 .addComponent(blackBtn)
-                                .addComponent(yellowBtn)
-                                .addComponent(cyanBtn)
-                                .addComponent(brownBtn)
+                                .addComponent(darkgreyBtn)
                                 .addComponent(greyBtn)
-                                .addComponent(purpleBtn)
-                                .addComponent(limeBtn)
-
+                                .addComponent(redBtn)
                                 .addComponent(orangeBtn)
+                                .addComponent(yellowBtn)
+                                .addComponent(limeBtn)
+                                .addComponent(greenBtn)
 
 
                         )
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(pinkBtn)
-                                .addComponent(redBtn)
-                                .addComponent(greenBtn)
-                                .addComponent(blueBtn)
-                                .addComponent(darkgreyBtn)
-                                .addComponent(magentaBtn)
                                 .addComponent(aoiBtn)
+                                .addComponent(cyanBtn)
                                 .addComponent(skyBtn)
+                                .addComponent(blueBtn)
+                                .addComponent(purpleBtn)
+                                .addComponent(magentaBtn)
+                                .addComponent(pinkBtn)
+                                .addComponent(brownBtn)
+
+
                         )
 
                 )
@@ -589,24 +590,24 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
                 .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(BASELINE)
                                 .addComponent(blackBtn)
-                                .addComponent(yellowBtn)
-                                .addComponent(cyanBtn)
-                                .addComponent(brownBtn)
+                                .addComponent(darkgreyBtn)
                                 .addComponent(greyBtn)
-                                .addComponent(purpleBtn)
-                                .addComponent(limeBtn)
+                                .addComponent(redBtn)
                                 .addComponent(orangeBtn)
+                                .addComponent(yellowBtn)
+                                .addComponent(limeBtn)
+                                .addComponent(greenBtn)
 
                         )
                         .addGroup(layout.createParallelGroup(BASELINE)
-                                .addComponent(pinkBtn)
-                                .addComponent(redBtn)
-                                .addComponent(greenBtn)
-                                .addComponent(blueBtn)
-                                .addComponent(darkgreyBtn)
-                                .addComponent(magentaBtn)
                                 .addComponent(aoiBtn)
+                                .addComponent(cyanBtn)
                                 .addComponent(skyBtn)
+                                .addComponent(blueBtn)
+                                .addComponent(purpleBtn)
+                                .addComponent(magentaBtn)
+                                .addComponent(pinkBtn)
+                                .addComponent(brownBtn)
                         )
                 )
         );
@@ -875,22 +876,22 @@ public class CanvasClient extends UnicastRemoteObject implements CanvasClientInt
 
     public static void main(String[] args) throws RemoteException, MalformedURLException, NotBoundException, ServerNotActiveException {
 //         //submission:
-        if (args.length != 2) {
-            throw new IllegalArgumentException("Need exactly two arguments.");
-        }
+//        if (args.length != 2) {
+//            throw new IllegalArgumentException("Need exactly two arguments.");
+//        }
 
         try {
             //submission
-            if (!(args[0].equals("localhost") || args[0].equals("127.0.0.1"))) {
-                System.err.println("Please enter localhost or 127.0.0.1");
-                return;
-            }
-            String serverAddress = "//" + args[0] + ":" + args[1] + "/WhiteBoardServer";
+//            if (!(args[0].equals("localhost") || args[0].equals("127.0.0.1"))) {
+//                System.err.println("Please enter localhost or 127.0.0.1");
+//                return;
+//            }
+//            String serverAddress = "//" + args[0] + ":" + args[1] + "/WhiteBoardServer";
 
-//            //testing:
-//            String hostName = "localhost";
-//            String portNumber = "1234";
-//            String serverAddress = "//" + hostName + ":" + portNumber + "/WhiteBoardServer";
+            //testing:
+            String hostName = "localhost";
+            String portNumber = "1234";
+            String serverAddress = "//" + hostName + ":" + portNumber + "/WhiteBoardServer";
 
 
             //Look up the Canvas Server from the RMI name registry

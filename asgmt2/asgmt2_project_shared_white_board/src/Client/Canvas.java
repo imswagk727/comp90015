@@ -263,13 +263,13 @@ public class Canvas extends JComponent {
     }
 
     public void blue() {
-        this.color = Color.blue;
+        this.color = new Color(77, 77, 255);
         graphics.setPaint(color);
 
     }
 
     public void green() {
-        this.color = Color.green;
+        this.color = new Color(110, 255, 77);
         graphics.setPaint(color);
 
     }
@@ -281,54 +281,54 @@ public class Canvas extends JComponent {
     }
 
     public void red() {
-        this.color = Color.red;
+        this.color = new Color(255, 77, 77);
         graphics.setPaint(color);
 
     }
 
 
     public void orange() {
-        this.color = Color.orange;
+        this.color = new Color(255, 136, 77);
         graphics.setPaint(color);
 
     }
 
 
     public void yellow() {
-        this.color = Color.yellow;
+        this.color = new Color(255, 255, 77);
         graphics.setPaint(color);
 
     }
 
     public void aoi() {
-        this.color = new Color(0, 102, 102);
+        this.color = new Color(77, 255, 151);
         graphics.setPaint(color);
     }
 
     public void brown() {
-        this.color = new Color(153, 76, 0);
+        this.color = new Color(255, 77, 101);
         graphics.setPaint(color);
 
     }
 
     public void cyan() {
-        this.color = Color.cyan;
+        this.color = new Color(77, 255, 213);
         graphics.setPaint(color);
     }
 
     public void purple() {
-        this.color = new Color(102, 0, 204);
+        this.color = new Color(166, 77, 255);
         graphics.setPaint(color);
     }
 
     public void pink() {
-        this.color = new Color(255, 153, 204);
+        this.color = new Color(255, 77, 153);
         graphics.setPaint(color);
 
     }
 
     public void magenta() {
-        this.color = Color.magenta;
+        this.color = new Color(255, 128, 255);
         graphics.setPaint(color);
     }
 
@@ -345,7 +345,7 @@ public class Canvas extends JComponent {
     }
 
     public void lime() {
-        this.color = new Color(102, 102, 0);
+        this.color = new Color(213, 255, 77);
         graphics.setPaint(color);
 
     }
