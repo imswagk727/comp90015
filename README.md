@@ -42,3 +42,28 @@ java -jar DictionaryClient.jar localhost 8888
 Server             |  Client
 :-------------------------:|:-------------------------:
 <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/server.png" style="width: 100%">  |  <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt1/demo_picture/client.png" style="width: 100%">
+
+
+### How to run assignment 2 - multi-threaded shared white board 
+
+1. Change working directory to file path  
+```bash
+cd replace_to_your_folder_path/comp90015/asgmt2/submit
+```
+2. Run server  
+```bash
+java –jar server.jar <port>
+
+# example :
+java -jar server.jar 8888
+```
+3. Run client  
+```bash
+java –jar client.jar <server-address> <server-port>
+
+# example :
+java -jar client.jar localhost 8888
+```
+Server | Client (manager) | Client             
+:-------------------------:|:-------------------------:|:-------------------------:|
+<img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt2/demo_picture/server.png" style="width: 100%">  |  <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt2/demo_picture/k1_client(manager).png" style="width: 100%"> |  <img src="https://raw.githubusercontent.com/imswagk727/comp90015/main/asgmt2/demo_picture/k2_client.png" style="width: 100%"> 
